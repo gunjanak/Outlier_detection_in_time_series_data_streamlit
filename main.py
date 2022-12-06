@@ -147,7 +147,7 @@ def main():
                 #Test if data is normal or not
                 t_test,p_value = kstest_normal(df_graph)
                 if p_value < 0.05:
-                    st.write("Reject null hypothesis. Data is not normal")
+                    st.write("Data is not normal")
                     outliers,transformed = modified_zscore(df_graph)
                     if(len(outliers) > 0):
                         st.write(outliers)
@@ -159,7 +159,7 @@ def main():
                         st.pyplot(plot_z_outlier)
 
                 else:
-                    st.write("Fail to reject null hypothesis. Data is normal")
+                    st.write(" Data is normal")
                     outliers, transformed = zscore(df_graph)
                     if(len(outliers) > 0):
                         st.write(outliers)
